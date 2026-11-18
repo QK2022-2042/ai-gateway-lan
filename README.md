@@ -28,6 +28,10 @@
 
 管理界面默认地址：`http://<服务器IP>:8080`
 
+![管理台概览](docs/screenshots/overview.jpg)
+
+> 概览：24 小时 / 7 天 / 30 天趋势、Token 与费用、成功率、供应商健康、模型用量 Top 与最近错误。
+
 ---
 
 ## 二、运行架构
@@ -158,6 +162,50 @@ sudo nginx -t && sudo systemctl reload nginx
 ```
 
 通过代理访问时，把 `/etc/ai-gateway/config.json` 中的 `trust_proxy` 改为 `true` 并重启服务，日志才会记录真实客户端 IP。
+
+### 3.7 演示：先在本机跑通一次调用
+
+不想先装服务，可以起一个临时实例，几分钟走完整条链路：
+
+```bash
+# 启动：数据写到 ./data，管理界面在 8080
+./ai-gateway -listen :8080 -data ./data
+
+# 首次启动会打印初始管理员密码，同时保存在 data/initial-admin.txt
+# 浏览器打开 http://127.0.0.1:8080，用 admin + 初始密码登录，并按提示修改密码
+```
+
+登录后依次完成三件事：
+
+1. 「供应商」→「添加供应商」：填内网模型地址（如 `http://10.0.0.21:8000`），点「测试」确认连通；
+2. 「模型与路由」→「新建模型」：别名填 `qwen2.5-32b-instruct`，再点「+ 路由」绑定供应商与上游真实模型名；
+3. 「API 密钥」→「新建密钥」：选择用户并创建，明文密钥只在此时显示一次。
+
+用拿到的密钥发起第一次调用：
+
+```bash
+curl http://127.0.0.1:8080/v1/chat/completions \
+  -H "Authorization: Bearer gw-你的密钥" \
+  -H "Content-Type: application/json" \
+  -d '{"model":"qwen2.5-32b-instruct","messages":[{"role":"user","content":"你好"}],"stream":false}'
+```
+
+```json
+{
+  "id": "chatcmpl-9f2c1a",
+  "object": "chat.completion",
+  "created": 1763510400,
+  "model": "qwen2.5-32b-instruct",
+  "choices": [{
+    "index": 0,
+    "finish_reason": "stop",
+    "message": { "role": "assistant", "content": "你好！有什么可以帮你的？" }
+  }],
+  "usage": { "prompt_tokens": 12, "completion_tokens": 9, "total_tokens": 21 }
+}
+```
+
+切回「概览」，这次调用立即出现在趋势图、模型用量和「调用日志」中；多调几次就能看到成功率、平均延迟与预估费用。
 
 ---
 
@@ -409,6 +457,29 @@ Base URL 一律填**根地址**，网关会自动拼接 `/v1/chat/completions` �
 “审计日志”记录登录失败、用户/Key/供应商/模型/设置的变更操作。
 
 普通成员只能看到自己的日志和自己的 Key。
+
+### 界面预览
+
+以下截图来自一套演示数据（3 个供应商、5 个模型、5 个用户）。
+
+<table>
+  <tr>
+    <td width="50%"><img src="docs/screenshots/logs.jpg" alt="调用日志"></td>
+    <td width="50%"><img src="docs/screenshots/models.jpg" alt="模型与路由"></td>
+  </tr>
+  <tr>
+    <td><img src="docs/screenshots/providers.jpg" alt="供应商"></td>
+    <td><img src="docs/screenshots/users.jpg" alt="用户管理"></td>
+  </tr>
+  <tr>
+    <td><img src="docs/screenshots/keys.jpg" alt="API 密钥"></td>
+    <td><img src="docs/screenshots/guide.jpg" alt="接入指南"></td>
+  </tr>
+  <tr>
+    <td><img src="docs/screenshots/audit.jpg" alt="审计日志"></td>
+    <td><img src="docs/screenshots/login.jpg" alt="登录页"></td>
+  </tr>
+</table>
 
 ---
 
