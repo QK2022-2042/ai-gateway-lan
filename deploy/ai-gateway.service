@@ -1,0 +1,28 @@
+[Unit]
+Description=AI Gateway - OpenAI-compatible model API relay
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=ai-gateway
+Group=ai-gateway
+ExecStart=/usr/local/bin/ai-gateway -config /etc/ai-gateway/config.json
+Restart=on-failure
+RestartSec=3
+Environment=GATEWAY_LOG_LEVEL=info
+
+# 安全加固
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/ai-gateway
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX
+LimitNOFILE=65535
+
+[Install]
+WantedBy=multi-user.target

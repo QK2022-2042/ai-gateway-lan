@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1900" height="1060" viewBox="0 0 1900 1060">
+<style>
+  .conn { stroke:#222; stroke-width:1.6; fill:none; stroke-linecap:square; }
+  .gate { stroke:#111; stroke-width:1.8; fill:#fff; }
+  .ev-top { stroke:#111; stroke-width:2.4; fill:#fff; }
+  .ev-mid { stroke:#111; stroke-width:1.7; fill:#f4f5f7; }
+  .ev-ph { stroke:#333; stroke-width:1.4; fill:#fff; }
+  .ev-basic { stroke:#111; stroke-width:1.9; fill:#fff; }
+  text { font-family:STHeiti, 'Heiti SC', 'PingFang SC', 'Microsoft YaHei', sans-serif; fill:#111; }
+  .label { font-weight:400; }
+  .strong { font-weight:700; }
+  .caption { fill:#333; }
+  .legend { fill:#333; font-size:14px; }
+</style>
+<text class="label" x="950" y="32" font-size="26" text-anchor="middle" dominant-baseline="central" font-weight="700">整流罩质量问题故障树</text>
+<line class="conn" x1="950" y1="124.0" x2="950" y2="155.0"/>
+<rect class="ev-top" x="790.0" y="60.0" width="320" height="64" rx="2"/>
+<text class="label" x="950" y="92" font-size="21" text-anchor="middle" dominant-baseline="central" font-weight="700">T  整流罩质量问题</text>
+<path class="gate" d="M 912.0,217.0 Q 950.0,187.6 988.0,217.0 Q 976.6,187.6 950.0,155.0 Q 923.4,187.6 912.0,217.0 Z"/>
+<text class="label" x="1008" y="190" font-size="14" text-anchor="start" dominant-baseline="central">G0</text>
+<line class="conn" x1="950" y1="217.0" x2="950" y2="250"/>
+<line class="conn" x1="340" y1="250" x2="1560" y2="250"/>
+<line class="conn" x1="340" y1="250" x2="340" y2="276.0"/>
+<rect class="ev-mid" x="210.0" y="276.0" width="260" height="60" rx="2"/>
+<text class="label" x="340" y="306" font-size="19" text-anchor="middle" dominant-baseline="central">M1  设计问题</text>
+<line class="conn" x1="340" y1="336.0" x2="340" y2="367.0"/>
+<path class="gate" d="M 302.0,429.0 Q 340.0,399.6 378.0,429.0 Q 366.6,399.6 340.0,367.0 Q 313.4,399.6 302.0,429.0 Z"/>
+<text class="label" x="398" y="402" font-size="14" text-anchor="start" dominant-baseline="central">G1</text>
+<line class="conn" x1="950" y1="250" x2="950" y2="276.0"/>
+<rect class="ev-mid" x="820.0" y="276.0" width="260" height="60" rx="2"/>
+<text class="label" x="950" y="306" font-size="19" text-anchor="middle" dominant-baseline="central">M2  装配工艺问题</text>
+<line class="conn" x1="950" y1="336.0" x2="950" y2="367.0"/>
+<path class="gate" d="M 912.0,429.0 Q 950.0,399.6 988.0,429.0 Q 976.6,399.6 950.0,367.0 Q 923.4,399.6 912.0,429.0 Z"/>
+<text class="label" x="1008" y="402" font-size="14" text-anchor="start" dominant-baseline="central">G2</text>
+<line class="conn" x1="1560" y1="250" x2="1560" y2="276.0"/>
+<rect class="ev-mid" x="1430.0" y="276.0" width="260" height="60" rx="2"/>
+<text class="label" x="1560" y="306" font-size="19" text-anchor="middle" dominant-baseline="central">M3  表观问题</text>
+<line class="conn" x1="1560" y1="336.0" x2="1560" y2="367.0"/>
+<path class="gate" d="M 1522.0,429.0 Q 1560.0,399.6 1598.0,429.0 Q 1586.6,399.6 1560.0,367.0 Q 1533.4,399.6 1522.0,429.0 Z"/>
+<text class="label" x="1618" y="402" font-size="14" text-anchor="start" dominant-baseline="central">G3</text>
+<line class="conn" x1="340" y1="429.0" x2="340" y2="844"/>
+<line class="conn" x1="340" y1="530" x2="190" y2="530"/>
+<line class="conn" x1="190" y1="530" x2="190" y2="542.0"/>
+<rect class="ev-ph" x="82.5" y="542.0" width="215" height="56" rx="2"/>
+<text class="label" x="190" y="570" font-size="14" text-anchor="middle" dominant-baseline="central">M1-1 结构强度不足</text>
+<line class="conn" x1="340" y1="530" x2="490" y2="530"/>
+<line class="conn" x1="490" y1="530" x2="490" y2="542.0"/>
+<rect class="ev-ph" x="382.5" y="542.0" width="215" height="56" rx="2"/>
+<text class="label" x="490" y="570" font-size="14" text-anchor="middle" dominant-baseline="central">M1-2 刚度设计不足</text>
+<line class="conn" x1="340" y1="630" x2="190" y2="630"/>
+<line class="conn" x1="190" y1="630" x2="190" y2="642.0"/>
+<rect class="ev-ph" x="82.5" y="642.0" width="215" height="56" rx="2"/>
+<text class="label" x="190" y="670" font-size="14" text-anchor="middle" dominant-baseline="central">M1-3 连接区设计不合理</text>
+<line class="conn" x1="340" y1="630" x2="490" y2="630"/>
+<line class="conn" x1="490" y1="630" x2="490" y2="642.0"/>
+<rect class="ev-ph" x="382.5" y="642.0" width="215" height="56" rx="2"/>
+<text class="label" x="490" y="670" font-size="14" text-anchor="middle" dominant-baseline="central">M1-4 尺寸链设计超差</text>
+<line class="conn" x1="340" y1="730" x2="190" y2="730"/>
+<line class="conn" x1="190" y1="730" x2="190" y2="742.0"/>
+<rect class="ev-ph" x="82.5" y="742.0" width="215" height="56" rx="2"/>
+<text class="label" x="190" y="770" font-size="14" text-anchor="middle" dominant-baseline="central">M1-5 材料选型不当</text>
+<line class="conn" x1="340" y1="730" x2="490" y2="730"/>
+<line class="conn" x1="490" y1="730" x2="490" y2="742.0"/>
+<rect class="ev-ph" x="382.5" y="742.0" width="215" height="56" rx="2"/>
+<text class="label" x="490" y="770" font-size="14" text-anchor="middle" dominant-baseline="central">M1-6 分离机构设计缺陷</text>
+<circle class="ev-basic" cx="340" cy="890" r="46"/>
+<text class="label" x="340" y="879" font-size="17" text-anchor="middle" dominant-baseline="central" font-weight="700">X1</text>
+<text class="label" x="340" y="903" font-size="13" text-anchor="middle" dominant-baseline="central">设计问题</text>
+<line class="conn" x1="950" y1="429.0" x2="950" y2="844"/>
+<line class="conn" x1="950" y1="530" x2="800" y2="530"/>
+<line class="conn" x1="800" y1="530" x2="800" y2="542.0"/>
+<rect class="ev-ph" x="692.5" y="542.0" width="215" height="56" rx="2"/>
+<text class="label" x="800" y="570" font-size="14" text-anchor="middle" dominant-baseline="central">M2-1 装配间隙超差</text>
+<line class="conn" x1="950" y1="530" x2="1100" y2="530"/>
+<line class="conn" x1="1100" y1="530" x2="1100" y2="542.0"/>
+<rect class="ev-ph" x="992.5" y="542.0" width="215" height="56" rx="2"/>
+<text class="label" x="1100" y="570" font-size="14" text-anchor="middle" dominant-baseline="central">M2-2 紧固件预紧力不足</text>
+<line class="conn" x1="950" y1="630" x2="800" y2="630"/>
+<line class="conn" x1="800" y1="630" x2="800" y2="642.0"/>
+<rect class="ev-ph" x="692.5" y="642.0" width="215" height="56" rx="2"/>
+<text class="label" x="800" y="670" font-size="14" text-anchor="middle" dominant-baseline="central">M2-3 胶接界面脱粘</text>
+<line class="conn" x1="950" y1="630" x2="1100" y2="630"/>
+<line class="conn" x1="1100" y1="630" x2="1100" y2="642.0"/>
+<rect class="ev-ph" x="992.5" y="642.0" width="215" height="56" rx="2"/>
+<text class="label" x="1100" y="670" font-size="14" text-anchor="middle" dominant-baseline="central">M2-4 密封性能不达标</text>
+<line class="conn" x1="950" y1="730" x2="800" y2="730"/>
+<line class="conn" x1="800" y1="730" x2="800" y2="742.0"/>
+<rect class="ev-ph" x="692.5" y="742.0" width="215" height="56" rx="2"/>
+<text class="label" x="800" y="770" font-size="14" text-anchor="middle" dominant-baseline="central">M2-5 形位公差超差</text>
+<line class="conn" x1="950" y1="730" x2="1100" y2="730"/>
+<line class="conn" x1="1100" y1="730" x2="1100" y2="742.0"/>
+<rect class="ev-ph" x="992.5" y="742.0" width="215" height="56" rx="2"/>
+<text class="label" x="1100" y="770" font-size="14" text-anchor="middle" dominant-baseline="central">M2-6 复材分层孔隙超标</text>
+<circle class="ev-basic" cx="950" cy="890" r="46"/>
+<text class="label" x="950" y="879" font-size="17" text-anchor="middle" dominant-baseline="central" font-weight="700">X2</text>
+<text class="label" x="950" y="903" font-size="13" text-anchor="middle" dominant-baseline="central">工艺问题</text>
+<line class="conn" x1="1560" y1="429.0" x2="1560" y2="844"/>
+<line class="conn" x1="1560" y1="530" x2="1410" y2="530"/>
+<line class="conn" x1="1410" y1="530" x2="1410" y2="542.0"/>
+<rect class="ev-ph" x="1302.5" y="542.0" width="215" height="56" rx="2"/>
+<text class="label" x="1410" y="570" font-size="14" text-anchor="middle" dominant-baseline="central">M3-1 表面划伤</text>
+<line class="conn" x1="1560" y1="530" x2="1710" y2="530"/>
+<line class="conn" x1="1710" y1="530" x2="1710" y2="542.0"/>
+<rect class="ev-ph" x="1602.5" y="542.0" width="215" height="56" rx="2"/>
+<text class="label" x="1710" y="570" font-size="14" text-anchor="middle" dominant-baseline="central">M3-2 凹坑压痕</text>
+<line class="conn" x1="1560" y1="630" x2="1410" y2="630"/>
+<line class="conn" x1="1410" y1="630" x2="1410" y2="642.0"/>
+<rect class="ev-ph" x="1302.5" y="642.0" width="215" height="56" rx="2"/>
+<text class="label" x="1410" y="670" font-size="14" text-anchor="middle" dominant-baseline="central">M3-3 涂层脱落起泡</text>
+<line class="conn" x1="1560" y1="630" x2="1710" y2="630"/>
+<line class="conn" x1="1710" y1="630" x2="1710" y2="642.0"/>
+<rect class="ev-ph" x="1602.5" y="642.0" width="215" height="56" rx="2"/>
+<text class="label" x="1710" y="670" font-size="14" text-anchor="middle" dominant-baseline="central">M3-4 表面色差</text>
+<line class="conn" x1="1560" y1="730" x2="1410" y2="730"/>
+<line class="conn" x1="1410" y1="730" x2="1410" y2="742.0"/>
+<rect class="ev-ph" x="1302.5" y="742.0" width="215" height="56" rx="2"/>
+<text class="label" x="1410" y="770" font-size="14" text-anchor="middle" dominant-baseline="central">M3-5 纤维外露</text>
+<line class="conn" x1="1560" y1="730" x2="1710" y2="730"/>
+<line class="conn" x1="1710" y1="730" x2="1710" y2="742.0"/>
+<rect class="ev-ph" x="1602.5" y="742.0" width="215" height="56" rx="2"/>
+<text class="label" x="1710" y="770" font-size="14" text-anchor="middle" dominant-baseline="central">M3-6 表面污染</text>
+<circle class="ev-basic" cx="1560" cy="890" r="46"/>
+<text class="label" x="1560" y="879" font-size="17" text-anchor="middle" dominant-baseline="central" font-weight="700">X3</text>
+<text class="label" x="1560" y="903" font-size="13" text-anchor="middle" dominant-baseline="central">现场操作问题</text>
+<path class="gate" d="M 124.0,1021.0 Q 150.0,1001.0 176.0,1021.0 Q 168.2,1001.0 150.0,979.0 Q 131.8,1001.0 124.0,1021.0 Z"/>
+<text class="legend" x="212" y="1000" font-size="15" text-anchor="start" dominant-baseline="central">或门</text>
+<rect class="ev-mid" x="311.0" y="982.0" width="58" height="36" rx="2"/>
+<text class="legend" x="414" y="1000" font-size="15" text-anchor="start" dominant-baseline="central">中间事件</text>
+<circle class="ev-basic" cx="600" cy="1000" r="18"/>
+<text class="legend" x="630" y="1000" font-size="15" text-anchor="start" dominant-baseline="central">底事件</text>
+<text class="caption" x="950" y="1026" font-size="16" text-anchor="middle" dominant-baseline="central">图 1  整流罩质量问题故障树（或门逻辑）</text>
+</svg>

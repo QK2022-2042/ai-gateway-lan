@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>AI 模型中转站</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232a78d6'/%3E%3Cpath d='M9 21V11l7 5 7-5v10' fill='none' stroke='white' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<div id="login-root" class="login-root hidden"></div>
+
+<div id="app" class="app hidden">
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32"><rect width="32" height="32" rx="8" fill="var(--series-1)"/><path d="M9 21V11l7 5 7-5v10" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+      <span class="brand-text">
+        <strong id="brand-name">AI 模型中转站</strong>
+        <small>Model Gateway</small>
+      </span>
+    </div>
+    <nav class="nav" id="nav" aria-label="主导航"></nav>
+    <div class="sidebar-foot">
+      <div class="user-chip" id="user-chip"></div>
+    </div>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <div class="topbar-title">
+        <h1 id="page-title">概览</h1>
+        <p id="page-desc">内网 AI 模型的统一接入与用量视图</p>
+      </div>
+      <div class="topbar-actions">
+        <span class="topbar-badge" id="topbar-badge">离线部署</span>
+        <button class="icon-btn" id="logout-btn" title="退出登录" aria-label="退出登录"></button>
+      </div>
+    </header>
+    <main class="view" id="view" tabindex="-1"></main>
+    <footer class="app-foot">
+      <span id="foot-text">AI Gateway</span>
+      <span class="dot-sep">·</span>
+      <span>所有数据仅保存在本机</span>
+    </footer>
+  </div>
+</div>
+
+<div id="modal-root"></div>
+<div id="toast-root" class="toast-root" aria-live="polite"></div>
+<script src="/app.js"></script>
+</body>
+</html>

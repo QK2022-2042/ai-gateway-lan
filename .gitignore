@@ -1,0 +1,9 @@
+/bin/
+/dist/
+/data/
+*.db
+*.db-shm
+*.db-wal
+master.key
+initial-admin.txt
+.DS_Store

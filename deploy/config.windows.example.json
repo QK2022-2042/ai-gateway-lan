@@ -1,0 +1,8 @@
+{
+  "listen": ":8080",
+  "data_dir": "C:\\ProgramData\\ai-gateway\\data",
+  "site_name": "AI 模型中转站",
+  "trust_proxy": false,
+  "session_ttl_hours": 168,
+  "log_file": "C:\\ProgramData\\ai-gateway\\logs\\gateway.log"
+}
